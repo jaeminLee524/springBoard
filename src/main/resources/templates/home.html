@@ -1,32 +1,15 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Hello</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/basic">
+<th:block layout:fragment="title">
+    <title>게시물 홈</title>
+</th:block>
 <body>
-<div class="container">
-
-<!--    <div th:replace="fragments/header :: header" />-->
-
-    <div class="jumbotron">
+<th:block layout:fragment="content">
         <h1>HELLO Board</h1>
         <p>
             <a class="btn btn-lg btn-secondary" href="/board/new">게시글 작성</a>
             <a class="btn btn-lg btn-secondary" href="/board/list">게시판 목록</a>
         </p>
-        <p class="lead">상품 기능</p>
-        <p>
-            <a class="btn btn-lg btn-dark" href="/items/new">상품 등록</a>
-            <a class="btn btn-lg btn-dark" href="/items">상품 목록</a>
-        </p>
-        <p class="lead">주문 기능</p>
-        <p>
-            <a class="btn btn-lg btn-info" href="/order">상품 주문</a>
-            <a class="btn btn-lg btn-info" href="/orders">주문 내역</a>
-        </p>
-    </div>
-
-</div> <!-- /container -->
+</th:block>
 </body>
 </html>
