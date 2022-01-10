@@ -12,12 +12,12 @@
 		, notice_yn
 		, secret_yn
 		, delete_yn
-		, insert_time
+		, create_time
 		, update_time
 		, delete_time
     </sql>
 
-    <insert id="insertBoard" parameterType="BoardDTO">
+    <insert id="insertBoard" parameterType="Board">
         INSERT INTO tb_board (
         <include refid="boardColumns" />
         ) VALUES (
@@ -35,7 +35,7 @@
         )
     </insert>
 
-    <select id="selectBoardDetail" parameterType="long" resultType="BoardDTO">
+    <select id="selectBoardDetail" parameterType="long" resultType="Board">
         SELECT
         <include refid="boardColumns" />
         FROM tb_board
@@ -43,7 +43,7 @@
           AND idx = #{idx}
     </select>
 
-    <update id="updateBoard" parameterType="BoardDTO">
+    <update id="updateBoard" parameterType="Board">
         UPDATE tb_board
         SET
             update_time = NOW()
@@ -65,16 +65,16 @@
             idx = #{idx}
     </update>
 
-    <select id="selectBoardList" parameterType="BoardDTO" resultType="BoardDTO">
+    <select id="selectBoardList" parameterType="Board" resultType="Board">
         SELECT
         <include refid="boardColumns" />
         FROM
         tb_board
         WHERE delete_yn = 'N'
-        ORDER BY notice_yn ASC, idx DESC, insert_time DESC
+        ORDER BY notice_yn ASC, idx DESC, create_time DESC
     </select>
 
-    <select id="selectBoardTotalCount" parameterType="BoardDTO" resultType="int">
+    <select id="selectBoardTotalCount" parameterType="Board" resultType="int">
         SELECT
             COUNT(*)
         FROM
