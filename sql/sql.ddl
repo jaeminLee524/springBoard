@@ -7,7 +7,7 @@ CREATE TABLE tb_board (
                           notice_yn ENUM('Y', 'N') NOT NULL DEFAULT 'N' COMMENT '공지글 여부',
                           secret_yn ENUM('Y', 'N') NOT NULL DEFAULT 'N' COMMENT '비밀글 여부',
                           delete_yn ENUM('Y', 'N') NOT NULL DEFAULT 'N' COMMENT '삭제 여부',
-                          insert_time DATETIME NOT NULL DEFAULT NOW() COMMENT '등록일',
+                          create_time DATETIME NOT NULL DEFAULT NOW() COMMENT '등록일',
                           update_time DATETIME NULL COMMENT '수정일',
                           delete_time DATETIME NULL COMMENT '삭제일',
                           PRIMARY KEY (idx)
