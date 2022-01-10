@@ -139,7 +139,7 @@ public class BoardController {
     /**
      * 게시물 삭제
      */
-    @DeleteMapping("/delete/{idx}")
+    @PostMapping("/delete/{idx}")
     public String boardDelete(@PathVariable Long idx) {
         // idx에 맞는 데이터 삭제
         boardService.deleteBoard(idx);

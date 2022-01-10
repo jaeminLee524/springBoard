@@ -33,14 +33,16 @@ public class BoardService {
      * 게시판 목록 조회
      */
     public List<Board> getBoardList() {
-        int totalCnt = boardMapper.selectBoardTotalCount();
+        return boardMapper.selectBoardList();
+
+        /*int totalCnt = boardMapper.selectBoardTotalCount();
 
         if( totalCnt > 0 ) {
             return boardMapper.selectBoardList();
         }else {
             //TODO DB에 데이터가 하나도 없을 때 처리하는 로직 추가 예정
             throw new IllegalStateException();
-        }
+        }*/
     }
 
     /**

@@ -108,7 +108,7 @@
             if( confirm( idx + "번 게시글을 삭제할까요?")){
                 var form = document.createElement("form");
                 form.setAttribute("method", "post");
-                form.setAttribute("action", "/board/cancel/" + idx);
+                form.setAttribute("action", "/board/delete/" + idx);
                 document.body.appendChild(form);
                 form.submit();
             }
