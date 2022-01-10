@@ -18,6 +18,7 @@
         </div>
       </div>
 
+      <!-- 무조건 checked되는 문제로 인해 field 대신 value를 이용 -->
       <div class="form-group">
         <label for="secretYn" class="col-sm-2 control-label">비밀글 설정</label>
         <div class="col-sm-10" style="margin-top: 10px;">
@@ -47,6 +48,7 @@
       </div>
 
       <div class="btn_wrap text-center">
+        <!-- type 속성이 button or 폼테크 밖에 있다면 클릭을해도 동작을 안함 -->
         <a th:href="@{/}" class="btn btn-default waves-effect waves-light">뒤로가기</a>
         <button type="submit" class="btn btn-primary waves-effect waves-light">저장하기</button>
       </div>
